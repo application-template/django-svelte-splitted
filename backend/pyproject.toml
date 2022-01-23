@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "backend"
+name = "backend service"
 version = "0.1.0"
 description = ""
 authors = ["Jonathan Alberth Quispe Fuentes <qf.jonathan@gmail.com>"]

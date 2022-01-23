@@ -6,4 +6,4 @@ flake8 --config=pyproject.toml --exclude=*/migrations/*
 echo ""
 
 echo "running black ..."
-black --check --diff --exclude=migrations --config=pyproject.toml backend
+black --check --diff --exclude=migrations --config=pyproject.toml service
