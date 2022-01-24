@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_extensions',
+    'graphene_django',
     'service.account',
 ]
 
@@ -83,9 +84,27 @@ DATABASES = {
 }
 
 
+# Graphql schema
+
+GRAPHENE = {
+    'SCHEMA': 'service.graphql.schema',
+    'MIDDLEWARE': [
+        'graphql_jwt.middleware.JSONWebTokenMiddleware',
+    ],
+}
+
+
 # Custom user
 
 AUTH_USER_MODEL = 'account.User'
+
+
+# Auth backends
+
+AUTHENTICATION_BACKENDS = [
+    "graphql_jwt.backends.JSONWebTokenBackend",
+    "django.contrib.auth.backends.ModelBackend",
+]
 
 
 # Password validation
